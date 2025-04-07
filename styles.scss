@@ -134,6 +134,31 @@ hr{
     margin-top: 0px;
 }
 
+.button-blue{
+    @include button-style (#5465df, #5465df, 1.2em 2em, white, 0em 1em 10px, 0px); 
+}
+
+.button-blue{
+    @include button-hover(white, #626ca8, #5465df);
+}
+
+
+#button-red{
+    @include button-style(#ff5252, #ff5252, 1.2em 2.4em, white, default, 0px)
+}
+
+#button-red{
+    @include button-hover(white, #e26865, #e26865);
+}
+
+#button-grey{
+    @include button-style(#f7f7f7, white, 1.2em 2.2em, #58585f, 0px, 1px 5px 10px 1px #e5e7f3)
+}
+
+#button-grey{
+    @include button-hover(white, #5d5d66,#5d5d66);
+}
+
 //Header
 header {
     display: flex;
@@ -144,32 +169,34 @@ header {
     padding-right: 25px;
     max-width: 1300px;
     margin: auto;
-    nav{
-        a{
-            @include anchor-style(#353541, 0.86em);
-        }
+}
+
+#logo {
+     align-content: center;
+}
+
+a{
+    @include anchor-style(#353541, 0.86em);
+}
     
-        #circle {
-            @include circle-stlye(white);
-        }
+#circle {
+    @include circle-stlye(white);
+}
 
-        #logo-mobnav{
-            display: flex;
-            align-items: center;
-        }
+#logo-name{
+    color: white;
+}
 
-        #logo-name{
-            color: white;
-        }
-    }
-    #logo {
-        align-content: center;
-    }
+
+#logo-mobnav{
+align-items: center;
+display: none;
 }
 
 //nav movil
 .mostrar-menu{
     order:1;
+    display: none;
 }
 
 nav a:hover,
@@ -263,6 +290,10 @@ nav a:hover,
         display: block;
     }
 
+    #extension-row{
+        flex-direction: column
+    }
+
 }
 
 
@@ -274,7 +305,7 @@ main{
     max-width: 1300px;
     margin: auto;
 }
-
+//Section portada
 #portada {
     display: flex;
     align-items: center;
@@ -316,6 +347,8 @@ main{
     border-top-right-radius: 100px;
     z-index: -1;
 }
+
+//Section features
 
 #features{
     display: flex;
@@ -382,6 +415,8 @@ main{
         width:85%;
     }
 
+
+//Section extension
 .small-p{
     font-size: small;
 }
@@ -396,6 +431,19 @@ main{
     margin-right: 0em;
 }
 
+
+#chrome-div{
+    @include extension-div(0em);
+}
+
+#firefox-div{
+    @include extension-div(2.5em);
+}
+
+#opera-div{
+    @include extension-div(5em);
+}
+
 #questions{
     display: flex;
     flex-direction: column;
@@ -406,7 +454,29 @@ main{
     margin-bottom: 8em;
 }
 
+#extensions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4.9em;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 10em;
+}
 
+#description-extension{
+    text-align: center;
+    width: 32em;
+    margin-bottom: 2em;
+}
+
+#extension-row{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}   
+
+//Section questions
 
 #questions-description{
     display: flex;
@@ -465,6 +535,7 @@ main{
 }
 
 //Footer
+
 footer{
     a{
         @include anchor-style(white, 0.75em);
@@ -475,62 +546,33 @@ footer{
     }
 }
 
-.button-blue{
-    @include button-style (#5465df, #5465df, 1.2em 2em, white, 0em 1em 10px, 0px); 
-}
 
-.button-blue{
-    @include button-hover(white, #626ca8, #5465df);
-}
-
-
-#button-red{
-    @include button-style(#ff5252, #ff5252, 1.2em 2.4em, white, default, 0px)
-}
-
-#button-red{
-    @include button-hover(white, #e26865, #e26865);
-}
-
-#button-grey{
-    @include button-style(#f7f7f7, white, 1.2em 2.2em, #58585f, 0px, 1px 5px 10px 1px #e5e7f3)
-}
-
-#button-grey{
-    @include button-hover(white, #5d5d66,#5d5d66);
-}
-
-#extensions{
+#footer{
+    background-color: rgba(40, 40, 65);
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 4.9em;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-bottom: 10em;
 }
 
-#description-extension{
-    text-align: center;
-    width: 32em;
-    margin-bottom: 2em;
-}
 
-#extension-row{
+#footer #logo-mobnav{
     display: flex;
-    gap: 2em;
+}
+
+#footer #circle{
+    background-color: #5267df;
+}
+#footer a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.75em;
+    font-weight: 530;
+    padding: 0 25px;
+    transition:0.4s; 
+    letter-spacing: 0.10em;
+}
+
+#left-footer{
+    display: flex;
     align-items: center;
-}   
-
-
-#chrome-div{
-    @include extension-div(0em);
-}
-
-#firefox-div{
-    @include extension-div(2.5em);
-}
-
-#opera-div{
-    @include extension-div(5em);
 }
